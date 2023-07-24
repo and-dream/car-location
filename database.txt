@@ -1,0 +1,71 @@
+BDD
+4 tables : membre, voiture, resrvation, contact
+
+Creer une base de données car_location
+Mettre dessus
+
+Creer une table user
+    id int unsigned primary key auto_increment
+    email varchar 255 unique
+    mdp varchar 255 
+    username varchar 255
+    admin boolean
+
+    CREATE TABLE user (
+        id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+        email VARCHAR (255),
+        mdp VARCHAR (255),
+        username VARCHAR (255),
+        admin BOOLEAN
+    );
+
+// Afficher la structure de ma table
+
+Creer une table car
+    id int unsigned primary key auto_increment
+    name varchar 255
+    description text 
+    image varchar 255
+    price float 
+
+    CREATE TABLE car (
+        id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+        name VARCHAR (255),
+        description TEXT,
+        image VARCHAR (255),
+        price FLOAT (6,2)
+
+    );
+
+Creer une table contact
+    id int unsigned primary key auto_increment
+    email varchar 255
+    content text
+    date datetime
+
+    CREATE TABLE contact (
+        id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+        email VARCHAR (255),
+        content TEXT,
+        date DATETIME
+    );
+
+Creer une table reservation
+    id int unsigned primary key auto_increment
+    date_start date
+    date_end date
+    total_price float
+    id_user int unsigned clé secondaire id(user)
+    id_car int unsigned clé secondaire id(car)
+
+
+    CREATE TABLE reservation (
+        id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+        date_start DATE,
+        date_end DATE,
+        total_price FLOAT (6,2),
+        id_user INT UNSIGNED,
+        CONSTRAINT fk_id_user FOREIGN KEY (id_user) REFERENCES user(id),
+        id_car INT UNSIGNED,
+        CONSTRAINT fk_id_car FOREIGN KEY (id_car) REFERENCES car(id)
+    );
