@@ -2,7 +2,10 @@
 
 namespace App\Controller\Front;
 
-class ContactController {
+use App\Controller\AbstractController;
+
+class ContactController extends AbstractController
+{
 
     public function index($params){
         echo $params['id'];  

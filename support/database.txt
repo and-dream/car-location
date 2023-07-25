@@ -69,3 +69,9 @@ Creer une table reservation
         id_car INT UNSIGNED,
         CONSTRAINT fk_id_car FOREIGN KEY (id_car) REFERENCES car(id)
     );
+
+
+    INSERT INTO car (name, description, image, price)
+    VALUES
+    ('Renault Captur','Une voiture SUV compacte taillée pour la ville','image Renault Captur',35.99),
+    ('Fiat 500','Maniable et esthétique, sa petite taille permet de se garer partout','image Fiat 500',18.99);
