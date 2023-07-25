@@ -6,11 +6,6 @@ use App\Controller\Front\HomeController;
 use App\Controller\Front\ContactController;
 use App\Controller\Front\CarController;
 
-require_once '../src/Controller/Front/HomeController.php';
-require_once '../src/Controller/Front/ContactController.php';
-require_once '../src/Controller/Front/CarController.php';
-
-
 class Router {
     /**
      *

@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Bienvenue dans la page des voitures</h1>
+    <h1><?= $params['id'] ?></h1>
 </body>
 </html>
