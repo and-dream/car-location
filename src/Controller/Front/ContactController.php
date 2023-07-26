@@ -8,7 +8,7 @@ class ContactController extends AbstractController
 {
 
     public function index($params){
-        echo $params['id'];  
+        // echo $params['id'];  
     }
 
     public function saveForm(){

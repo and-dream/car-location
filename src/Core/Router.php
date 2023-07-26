@@ -5,6 +5,8 @@ namespace App\Core;
 use App\Controller\Front\HomeController;
 use App\Controller\Front\ContactController;
 use App\Controller\Front\CarController;
+use App\Controller\Front\ReservationController;
+use App\Controller\Front\UserController;
 
 class Router {
     /**
@@ -27,7 +29,7 @@ class Router {
             $this->currentController->index(); // appelle la method index du controleur d'accueil
         });
         // on ajoute une route pour la page contact avec un paramètre id 
-        $this->add_route('/contact/{id}', function($params){ // on peut passer les éventuels paramètres à la fonction
+        $this->add_route('/contact', function($params){ // on peut passer les éventuels paramètres à la fonction
             $this->currentController = new ContactController();
             $this->currentController->index($params);
         });
@@ -36,9 +38,24 @@ class Router {
             $this->currentController->saveForm($params);
         });
 
-        $this->add_route('/car/{id}', function($params){
+        $this->add_route('/car', function($params){
             $this->currentController = new CarController();
             $this->currentController->index($params);
+        });
+
+        $this->add_route('/reservation/{id}',function($params){
+            $this->currentController = new ReservationController();
+            $this->currentController->index($params);
+        });
+
+        $this->add_route('/inscription',function(){
+            $this->currentController = new UserController();
+            $this->currentController->index();
+        });
+
+        $this->add_route('/save-user',function(){
+            $this->currentController = new UserController();
+            $this->currentController->saveUser();
         });
     }
 
