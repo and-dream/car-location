@@ -1,5 +1,5 @@
 <?php
-require_once '../templates/includes/header.php';
+require_once '../templates/includes/front/header.php';
 ?>
 
 

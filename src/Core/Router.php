@@ -8,7 +8,8 @@ use App\Controller\Front\CarController;
 use App\Controller\Front\ReservationController;
 use App\Controller\Front\UserController;
 use App\Controller\Admin\AdminController;
-use App\Controller\AdminController as ControllerAdminController;
+use App\Controller\Admin\AdminCarController;
+
 
 class Router {
     /**
@@ -74,6 +75,13 @@ class Router {
             $this->currentController = new AdminController();
             $this->currentController->index();
         });
+
+        $this->add_route('/backoffice/cars', function(){
+            $this->currentController = new AdminCarController;
+            $this->currentController->index();
+        });
+
+       
     }
 
     private function add_route(string $route, callable $closure)
