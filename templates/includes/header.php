@@ -27,7 +27,7 @@
           <a class="nav-link" href="/car-location/inscription">Inscription</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Connexion</a>
+          <a class="nav-link" href="/car-location/connexion">Connexion</a>
         </li>
         
         
@@ -41,7 +41,8 @@
     <main>
 
     <?php
-    if(isset($_SESSION['message'])){
-      echo $_SESSION['message'];
-      unset($_SESSION['message']);
-    }
+    
+    App\Core\Session::getMessage();
+    // var_dump($_SESSION);
+    
+   //on peut mettre un use \App\Core\Session; et ensuite Session::getMessage();

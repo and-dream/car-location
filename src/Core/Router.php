@@ -7,6 +7,8 @@ use App\Controller\Front\ContactController;
 use App\Controller\Front\CarController;
 use App\Controller\Front\ReservationController;
 use App\Controller\Front\UserController;
+use App\Controller\Admin\AdminController;
+use App\Controller\AdminController as ControllerAdminController;
 
 class Router {
     /**
@@ -56,6 +58,21 @@ class Router {
         $this->add_route('/save-user',function(){
             $this->currentController = new UserController();
             $this->currentController->saveUser();
+        });
+
+        $this->add_route('/connexion',function(){
+            $this->currentController = new UserController();
+            $this->currentController->connexion();
+        });
+
+        $this->add_route('/connect',function(){
+            $this->currentController = new UserController();
+            $this->currentController->connect();
+        });
+
+        $this->add_route('/backoffice',function(){
+            $this->currentController = new AdminController();
+            $this->currentController->index();
         });
     }
 
