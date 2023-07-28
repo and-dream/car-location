@@ -19,4 +19,15 @@ use App\Model\AbstractModel;
             ]);
             return $stmt->fetch();
         }
+
+        public function updateCar(int $id, string $name, string $description,float $price): void
+        {
+            $stmt = $this->pdo->prepare('UPDATE car SET name = :name, description = :description, price = :price WHERE id = :id');
+            $stmt->execute([
+                ':name' => $name,
+                ':description' => $description,
+                ':price' => $price,
+                ':id' => $id
+            ]);
+        }
     }

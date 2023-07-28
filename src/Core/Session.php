@@ -3,6 +3,7 @@
 namespace App\Core;
 use App\Model\User;
 
+
 //on a une classe qui va gérer la gestion/création des messages
 class Session 
 {

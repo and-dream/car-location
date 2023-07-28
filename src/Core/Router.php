@@ -81,10 +81,20 @@ class Router {
             $this->currentController->index();
         });
 
-       
+        $this->add_route('/backoffice/update-car/{id}', function($params){
+            $this->currentController = new AdminCarController;
+            $this->currentController->carForm($params);
+        });
+
+        $this->add_route('/backoffice/form-car',function(){
+                $this->currentController = new AdminCarController;
+                $this->currentController->updateCar();
+        });
+
+        
     }
 
-    private function add_route(string $route, callable $closure)
+    private function add_route(string $route, callable $closure): void
     {
         // on convertit la route en une expression régulière pour une correspondance flexible en url et paramètre
         $pattern = str_replace('/', '\/', $route); // échappe les barres obliques pour la regex
