@@ -123,7 +123,16 @@ class UserController extends AbstractController
             header('Location: /car-location/connexion');
             exit();
         }
-        var_dump($user);
+        // var_dump($user);
+    }
+
+    public function deconnexion()
+    {
+        session_destroy();
+        unset($_SESSION);
+        Session::setFlashMessage('Vous êtes déconnectés', 'success');
+        header('Location: /car-location/');
+        exit();
     }
 }
 

@@ -66,6 +66,11 @@ class Router {
             $this->currentController->connexion();
         });
 
+        $this->add_route('/deconnexion',function(){
+            $this->currentController = new UserController();
+            $this->currentController->deconnexion();
+        });
+
         $this->add_route('/connect',function(){
             $this->currentController = new UserController();
             $this->currentController->connect();
